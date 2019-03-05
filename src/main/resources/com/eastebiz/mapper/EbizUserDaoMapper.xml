@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eastebiz.dao.EbizUserDao">
+   <!-- 注册 -->
+    <insert id="insertEbizUser" parameterType="ebizUser">
+        insert into ebizuser (userName,firstName,lastName,password,email,phoneNumber,
+        address,createTime,updateTime,mnote,status,userType,permissions,balance,personalLimit,introducer)
+        values (#{userName},#{firstName},#{lastName},#{password},#{email},#{phoneNumber},
+        #{address},#{createTime},#{updateTime},#{mnote},#{status},#{userType},#{permissions},#{balance},#{personalLimit},#{introducer})
+    </insert>
+
+   <!-- 登录 -->
+    <select id="selectOneEbizUser" parameterType="ebizUser" resultType="ebizUser">
+      select id,userName,firstName,lastName,password,email,phoneNumber,
+        address,createTime,updateTime,mnote,status,userType,permissions,balance,personalLimit,introducer  from
+        ebizuser where userName=#{userName} and password =#{password}
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
