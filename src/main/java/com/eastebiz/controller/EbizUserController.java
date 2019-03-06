@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/EbizUser")
-public class EbizUserControllre {
+public class EbizUserController {
 
     @Autowired
     private EbizUserSevice ebizUserSevice;

@@ -1,13 +1,17 @@
 import com.eastebiz.Application;
 
 import com.eastebiz.dao.EbizUserDao;
+import com.eastebiz.dao.PackageListDao;
 import com.eastebiz.entity.EbizUser;
+import com.eastebiz.entity.PackageList;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
 
 
 @RunWith(SpringRunner.class)
@@ -16,6 +20,7 @@ public class testDao {
 
     @Autowired
     private  EbizUserDao ebizUserDao;
+
 
     @Test
     public void Test1(){
@@ -27,11 +32,12 @@ public class testDao {
 
     @Test
     public void Tset2(){
-        EbizUser ebizUser = new EbizUser("yinxiang","123456");
+       EbizUser ebizUser = new EbizUser("yinxiang","123456");
 
         EbizUser user = ebizUserDao.selectOneEbizUser(ebizUser);
         System.out.println(user);
 
     }
+
 
 }
