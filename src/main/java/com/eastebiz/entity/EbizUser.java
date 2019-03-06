@@ -1,6 +1,9 @@
 package com.eastebiz.entity;
 
 
+import com.alibaba.fastjson.annotation.JSONField;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -34,7 +37,11 @@ public class EbizUser {
     private String email;
     private String phoneNumber;
     private String address;
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date createTime;
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
     private String mnote;
     private String status;
@@ -200,10 +207,57 @@ public class EbizUser {
     public EbizUser() {
     }
 
+    public EbizUser(Integer id) {
+        this.id = id;
+    }
+
+    //登录
     public EbizUser(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
+
+    //修改信息
+
+
+
+    public EbizUser(Integer id, String password, String email, String phoneNumber, String address, String mnote, String status, String userType, String permissions, String balance, String personalLimit, String introducer) {
+        this.id = id;
+        this.password = password;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.mnote = mnote;
+        this.status = status;
+        this.userType = userType;
+        this.permissions = permissions;
+        this.balance = balance;
+        this.personalLimit = personalLimit;
+        this.introducer = introducer;
+    }
+
+
+
+    public EbizUser(String userName, String firstName, String lastName, String password, String email, String phoneNumber, String address, Date createTime, String mnote, String status, String userType, String permissions, String balance, String personalLimit, String introducer) {
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.createTime = createTime;
+        this.mnote = mnote;
+        this.status = status;
+        this.userType = userType;
+        this.permissions = permissions;
+        this.balance = balance;
+        this.personalLimit = personalLimit;
+        this.introducer = introducer;
+    }
+
+
+
 
     public EbizUser(String userName, String firstName, String lastName, String password, String email, String phoneNumber, String address, Date createTime, Date updateTime, String mnote, String status, String userType, String permissions, String balance, String personalLimit, String introducer) {
         this.userName = userName;

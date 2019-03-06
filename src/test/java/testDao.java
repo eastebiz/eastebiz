@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 
 @RunWith(SpringRunner.class)
@@ -19,7 +20,7 @@ public class testDao {
 
     @Test
     public void Test1(){
-        EbizUser ebizUser = new EbizUser("yinxiang","yin","xiang","123456","21681615","15462841118","nj",new java.util.Date(),new java.util.Date(),"155","1","1","1","1","11","22");
+        EbizUser ebizUser = new EbizUser("yinxiang","yin","xiang","123456","21681615","15462841118","nj",new java.util.Date(),"155","1","1","1","1","11","22");
        ebizUserDao.insertEbizUser(ebizUser);
 
 
@@ -34,4 +35,23 @@ public class testDao {
 
     }
 
+    @Test
+    public void Test3(){
+        ebizUserDao.updateAndUpdateTime(1,new java.util.Date());
+
+    }
+
+    @Test
+    public void Test4(){
+        EbizUser ebizUser = new EbizUser(1,"1","21681615","15462841118","sh","155","1","1","1","1","11","22");
+        ebizUserDao.updateEbizUser(ebizUser);
+
+    }
+
+    @Test
+    public void Test5(){
+        EbizUser ebizUser = ebizUserDao.selectOneUserName("yinxiang");
+        System.out.println(ebizUser);
+
+    }
 }

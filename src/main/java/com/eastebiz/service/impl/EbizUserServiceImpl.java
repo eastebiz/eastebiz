@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
+
 
 @Service("ebizUserSevice")
 @Transactional
@@ -28,4 +30,26 @@ public class EbizUserServiceImpl implements EbizUserSevice {
     public EbizUser loginEbizUser(EbizUser ebizUser) {
         return ebizUserDao.selectOneEbizUser(ebizUser);
     }
+
+
+    @Override
+    public EbizUser queryOneUerName(String uerName) {
+
+        return ebizUserDao.selectOneUserName(uerName);
+    }
+
+
+    //修改登录时间
+    @Override
+    public void updateTime(Integer id, Date updateTime) {
+        ebizUserDao.updateAndUpdateTime(id, updateTime);
+    }
+
+
+    //修改所有信息
+    @Override
+    public void updateEbizUser(EbizUser ebizUser) {
+        ebizUserDao.updateEbizUser(ebizUser);
+    }
+
 }
