@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import java.util.Date;
 
 @Controller
 @RequestMapping("/EbizUser")
@@ -25,10 +24,6 @@ public class EbizUserController {
     @ResponseBody
     public String registerEbizUser(EbizUser ebizUser){
 
-        //创建用户的注册时间
-        Date createTime  = new java.util.Date();
-        ebizUser.setCreateTime(createTime);
-        //调用方法
         ebizUserSevice.registerEbizUser(ebizUser);
         return "ok";
     }
@@ -38,36 +33,11 @@ public class EbizUserController {
     @RequestMapping("/loginEbizUser")
     @ResponseBody
     public String loginEbizUser(EbizUser ebizUser, HttpSession session){
-        //得到数据
-        EbizUser newEbizUser = ebizUserSevice.loginEbizUser(ebizUser);
-        if(newEbizUser!=null){
-            //把用户存进session
-            session.setAttribute("EbizUser",newEbizUser);
+        EbizUser user = ebizUserSevice.loginEbizUser(ebizUser);
 
-            //修改登录时间
-            Integer id = newEbizUser.getId();
-            ebizUserSevice.updateTime(id,new java.util.Date());
-            return "ok";
-        }
-        return "NO";
-    }
+        //把用户存进session
+        session.setAttribute("EbizUser",user);
 
-    //查询用户是否是存在
-    @RequestMapping("/queryOneUerName")
-    @ResponseBody
-    public String queryOneUerName(String uerName){
-        EbizUser ebizUser = ebizUserSevice.queryOneUerName(uerName);
-        if(ebizUser==null){
-            return "ok";
-        }
-        return "no";
-    }
-
-    //修改
-    @RequestMapping("/amendEbizUser")
-    @ResponseBody
-    public String amendEbizUser(EbizUser ebizUser){
-        ebizUserSevice.updateEbizUser(ebizUser);
-        return "OK";
+        return "ok";
     }
 }
