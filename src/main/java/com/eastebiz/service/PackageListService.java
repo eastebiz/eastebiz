@@ -1,7 +1,5 @@
 package com.eastebiz.service;
 
-import com.eastebiz.entity.PackageList;
-
 import java.util.List;
 
 public interface PackageListService {

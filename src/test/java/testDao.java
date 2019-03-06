@@ -1,18 +1,13 @@
 import com.eastebiz.Application;
 
 import com.eastebiz.dao.EbizUserDao;
-import com.eastebiz.dao.PackageListDao;
 import com.eastebiz.entity.EbizUser;
-import com.eastebiz.entity.PackageList;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 
 @RunWith(SpringRunner.class)

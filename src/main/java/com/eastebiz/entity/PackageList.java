@@ -1,46 +1,41 @@
 package com.eastebiz.entity;
 
-<<<<<<< HEAD
-public class PackageList {
-=======
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class PackageList implements Serializable {//包裹列表
-
-    private  Integer  id;
-    private  Date createTime;
-    private  Date  updateTime;
-    private  String companyName;
-    private  String trackingNumber;
-    private  String storeName;
-    private  String userName;
-    private  String shippingAddress;
-    private  String email;
-    private  String phoneNumber;
-    private  String receiver;
+public class PackageList implements Serializable {
+    private Integer id;
+    private Date createTime;
+    private Date updateTime;
+    private String companyName;
+    private String trackingNumber;
+    private String storeName;
+    private String userName;
+    private String shippingAddress;
+    private String email;
+    private String phoneNumber;
+    private String receiver;
     private String recipient;
-    private  String mnote;
-    private  String unote;
-    private  Integer  packageQuantity;
-    private  double homeBasePrice;
-    private  Integer homePromotQuantity;
-    private  double homePromotPrice;
-    private  double wareHouseBasePrice;
-    private  Integer wareHousePromotQuantity;
-    private  double wareHousePromotPrice;
-    private  String creditCardNumber;//信用卡号
-    private  String status;
-    private  String checkStatus;//对单状态
-    private  String checker;
+    private String mnote;
+    private String unote;
+    private Integer packageQuantity;
+    private double homeBasePrice;
+    private Integer homePromotQuantity;
+    private double homePromotPrice;
+    private double wareHouseBasePrice;
+    private Integer wareHousePromotQuantity;
+    private double wareHousePromotPrice;
+    private String creditCardNumber;//信用卡号
+    private String status;
+    private String checkStatus;//对单状态
+    private String checker;
     private String labelStatus;//label是否已发送
     private String labeler;
     private String payStatus;
     private String payer;
-    private List<ProductList>  productLists=new ArrayList<ProductList>();
+    private List<ProductList> productLists = new ArrayList<ProductList>();
     private Integer userId;
     private Integer companyId;
 
@@ -71,7 +66,7 @@ public class PackageList implements Serializable {//包裹列表
                 ", creditCardNumber='" + creditCardNumber + '\'' +
                 ", status='" + status + '\'' +
                 ", checkStatus='" + checkStatus + '\'' +
-                ", checker='" + checker+'\''+
+                ", checker='" + checker + '\'' +
                 ", labelStatus='" + labelStatus + '\'' +
                 ", labeler='" + labeler + '\'' +
                 ", payStatus='" + payStatus + '\'' +
@@ -86,7 +81,7 @@ public class PackageList implements Serializable {//包裹列表
         super();
     }
 
-    public PackageList(Integer id, Date createTime, Date updateTime, String companyName, String trackingNumber, String storeName, String userName, String shippingAddress, String email, String phoneNumber, String receiver, String recipient, String mnote, String unote, Integer packageQuantity, double homeBasePrice, Integer homePromotQuantity, double homePromotPrice, double wareHouseBasePrice, Integer wareHousePromotQuantity, double wareHousePromotPrice, String creditCardNumber, String status, String checkStatus,String checker, String labelStatus, String labeler, String payStatus, String payer, List<ProductList> productLists, Integer userId, Integer companyId) {
+    public PackageList(Integer id, Date createTime, Date updateTime, String companyName, String trackingNumber, String storeName, String userName, String shippingAddress, String email, String phoneNumber, String receiver, String recipient, String mnote, String unote, Integer packageQuantity, double homeBasePrice, Integer homePromotQuantity, double homePromotPrice, double wareHouseBasePrice, Integer wareHousePromotQuantity, double wareHousePromotPrice, String creditCardNumber, String status, String checkStatus, String checker, String labelStatus, String labeler, String payStatus, String payer, List<ProductList> productLists, Integer userId, Integer companyId) {
         this.id = id;
         this.createTime = createTime;
         this.updateTime = updateTime;
@@ -111,7 +106,7 @@ public class PackageList implements Serializable {//包裹列表
         this.creditCardNumber = creditCardNumber;
         this.status = status;
         this.checkStatus = checkStatus;
-        this.checker=checker;
+        this.checker = checker;
         this.labelStatus = labelStatus;
         this.labeler = labeler;
         this.payStatus = payStatus;
@@ -369,5 +364,5 @@ public class PackageList implements Serializable {//包裹列表
         this.companyId = companyId;
     }
 
->>>>>>> origin/master
+
 }

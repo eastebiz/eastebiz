@@ -1,7 +1,6 @@
 package com.eastebiz.service.impl;
 
 import com.eastebiz.dao.PackageListDao;
-import com.eastebiz.entity.PackageList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
