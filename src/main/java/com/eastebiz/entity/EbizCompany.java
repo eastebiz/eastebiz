@@ -50,7 +50,7 @@ public class EbizCompany implements Serializable {
 
     //关系属性
     private List<PackageList> packageLists = new ArrayList<PackageList>();
-    private List<ProductList> productLists = new ArrayList<ProductList>();
+    private List<Product> products = new ArrayList<Product>();
 
     //get set
 
@@ -239,12 +239,12 @@ public class EbizCompany implements Serializable {
         this.packageLists = packageLists;
     }
 
-    public List<ProductList> getProductLists() {
-        return productLists;
+    public List<Product> getProducts() {
+        return products;
     }
 
-    public void setProductLists(List<ProductList> productLists) {
-        this.productLists = productLists;
+    public void setProductLists(List<Product> products) {
+        this.products = products;
     }
 
     //构造
@@ -309,7 +309,7 @@ public class EbizCompany implements Serializable {
         this.createTime = createTime;
     }
 
-    public EbizCompany(Integer id, String companyName, String owerName, String password, String email, String status, String permision, String balance, String mote, String uNote, String payTimeInfor, String address, String address1Name, String address1Value, String address2Name, String address2Value, String address3Name, String address3Value, String phoneNumber, String userManual, Date createTime, Date updateTime, List<PackageList> packageLists, List<ProductList> productLists) {
+    public EbizCompany(Integer id, String companyName, String owerName, String password, String email, String status, String permision, String balance, String mote, String uNote, String payTimeInfor, String address, String address1Name, String address1Value, String address2Name, String address2Value, String address3Name, String address3Value, String phoneNumber, String userManual, Date createTime, Date updateTime, List<PackageList> packageLists, List<Product> products) {
         this.id = id;
         this.companyName = companyName;
         this.owerName = owerName;
@@ -333,7 +333,7 @@ public class EbizCompany implements Serializable {
         this.createTime = createTime;
         this.updateTime = updateTime;
         this.packageLists = packageLists;
-        this.productLists = productLists;
+        this.products = products;
     }
 
     @Override
@@ -362,6 +362,7 @@ public class EbizCompany implements Serializable {
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
                 ", packageLists=" + packageLists +
+                ", products=" + products +
                 '}';
     }
 }

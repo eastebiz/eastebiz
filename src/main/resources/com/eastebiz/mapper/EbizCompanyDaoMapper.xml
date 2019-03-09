@@ -19,7 +19,7 @@
         ebizcompany where companyName=#{companyName} and password =#{password}
     </select>
     <!-- 查询公司名称是否存在  -->
-    <select id="selectOneCompanyName" parameterType="String" resultType="EbizCompany">
+    <select id="selectOneCompanyName" parameterType="String" resultType="ebizCompany">
         select id,companyName,owerName,password,email,status,permision,
       balance,mote,uNote,payTimeInfor,address,address1Name,address1Value,address2Name,address2Value,
       address3Name,address3Value,phoneNumber,userManual,createTime,updateTime from
@@ -27,7 +27,7 @@
     </select>
 
     <!-- 查询医生名称是否存在  -->
-    <select id="selectOneOwerName" parameterType="String" resultType="EbizCompany">
+    <select id="selectOneOwerName" parameterType="String" resultType="ebizCompany">
          select id,companyName,owerName,password,email,status,permision,
       balance,mote,uNote,payTimeInfor,address,address1Name,address1Value,address2Name,address2Value,
       address3Name,address3Value,phoneNumber,userManual,createTime,updateTime from
@@ -40,7 +40,7 @@
     </update>
 
     <!-- 修改信息 -->
-    <update id="updateEbizCompany" parameterType="EbizCompany">
+    <update id="updateEbizCompany" parameterType="ebizCompany">
          update  ebizcompany
         <trim prefix="set" suffixOverrides=",">
             <if test="password!=null">

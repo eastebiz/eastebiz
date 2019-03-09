@@ -31,8 +31,9 @@ public class EbizUserServiceImpl implements EbizUserSevice {
         return ebizUserDao.selectOneEbizUser(ebizUser);
     }
 
-
+    //查询名字存不存在
     @Override
+    @Transactional(propagation = Propagation.SUPPORTS,readOnly = true)
     public EbizUser queryOneUerName(String uerName) {
 
         return ebizUserDao.selectOneUserName(uerName);

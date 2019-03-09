@@ -35,7 +35,6 @@ public class testDao {
 
     }
 
-<<<<<<< HEAD
     @Test
     public void Test3(){
         ebizUserDao.updateAndUpdateTime(1,new java.util.Date());
@@ -55,7 +54,5 @@ public class testDao {
         System.out.println(ebizUser);
 
     }
-=======
 
->>>>>>> origin/master
 }
