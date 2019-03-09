@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "http://mybatis.org/dtd/mybatis-3-mapper.dtd" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eastebiz.dao.PackageListDao">
+<!--#查询护士所有包裹-->
+  <select id="selectAllPackageById" resultType="PackageList">
+    select id,CreateTime,UpdateTime,CompanyName,TrackingNumber,StoreName,UserName,ShippingAddress,Email,
+    PhoneNumber,Receiver,Recipient,Mnote,Unote,PackageQuantity,HomeBasePrice,HomePromotQuantity,HomePromotPrice,WareHouseBasePrice,
+    WareHousePromotQuantity,WareHousePromotPrice,CreditCardNumber,Status,CheckStatus,Checker,LabelStatus,Labeler,PayStatus,Payer,
+    ProductId,UserId,CompanyId
+      from packagelist
+      where  UserId=#{userId}
+
+  </select>
+  <!--查询公司/医生所有包裹-->
+  <select id="selectAllPackageByCompanyId" resultType="PackageList">
+  select
+  id,CreateTime,UpdateTime,CompanyName,TrackingNumber,StoreName,UserName,ShippingAddress,Email,
+    PhoneNumber,Receiver,Recipient,Mnote,Unote,PackageQuantity,HomeBasePrice,HomePromotQuantity,HomePromotPrice,WareHouseBasePrice,
+    WareHousePromotQuantity,WareHousePromotPrice,CreditCardNumber,Status,CheckStatus,Checker,LabelStatus,Labeler,PayStatus,Payer,
+    ProductId,UserId,CompanyId
+    from  packagelist
+      where  CompanyId=#{companyId}
+
+  </select>
+<!--//未发货包裹-->
+  <select id="selectUnSendPackage" resultType="PackageList">
+  select
+  id,CreateTime,UpdateTime,CompanyName,TrackingNumber,StoreName,UserName,ShippingAddress,Email,
+    PhoneNumber,Receiver,Recipient,Mnote,Unote,PackageQuantity,HomeBasePrice,HomePromotQuantity,HomePromotPrice,WareHouseBasePrice,
+    WareHousePromotQuantity,WareHousePromotPrice,CreditCardNumber,Status,CheckStatus,Checker,LabelStatus,Labeler,PayStatus,Payer,
+    ProductId,UserId,CompanyId
+    from  packagelist
+      where LabelStatus=#{labelStatus} and TrackingNumber is null
+
+  </select>
+  <!--//途中    tracking 已填写.但未对单unchecked-->
+  <select id="selectTrackingPackage" resultType="PackageList">
+    select
+    id,CreateTime,UpdateTime,CompanyName,TrackingNumber,StoreName,UserName,ShippingAddress,Email,
+    PhoneNumber,Receiver,Recipient,Mnote,Unote,PackageQuantity,HomeBasePrice,HomePromotQuantity,HomePromotPrice,WareHouseBasePrice,
+    WareHousePromotQuantity,WareHousePromotPrice,CreditCardNumber,Status,CheckStatus,Checker,LabelStatus,Labeler,PayStatus,Payer,
+    ProductId,UserId,CompanyId
+    from  packagelist
+    where  TrackingNumber is not null and  CheckStatus=#{checkStatus}
+
+  </select>
+<!--//待结算   label 已发,checked 已对单.unpaied-->
+<select id="selectUnPaiedPackage" resultType="PackageList">
+  select  id,CreateTime,UpdateTime,CompanyName,TrackingNumber,StoreName,UserName,ShippingAddress,Email,
+    PhoneNumber,Receiver,Recipient,Mnote,Unote,PackageQuantity,HomeBasePrice,HomePromotQuantity,HomePromotPrice,WareHouseBasePrice,
+    WareHousePromotQuantity,WareHousePromotPrice,CreditCardNumber,Status,CheckStatus,Checker,LabelStatus,Labeler,PayStatus,Payer,
+    ProductId,UserId,CompanyId
+  from  packagelist
+  where  PayStatus=#{payStatus}
+</select>
+  <!--已结算-->
+  <select id="selectPaiedPackage" resultType="PackageList">
+  select  id,CreateTime,UpdateTime,CompanyName,TrackingNumber,StoreName,UserName,ShippingAddress,Email,
+    PhoneNumber,Receiver,Recipient,Mnote,Unote,PackageQuantity,HomeBasePrice,HomePromotQuantity,HomePromotPrice,WareHouseBasePrice,
+    WareHousePromotQuantity,WareHousePromotPrice,CreditCardNumber,Status,CheckStatus,Checker,LabelStatus,Labeler,PayStatus,Payer,
+    ProductId,UserId,CompanyId
+  from  packagelist
+  where  PayStatus=#{payStatus}
+</select>
+  <!--//邮寄完成      对单完成无误-->
+<select id="selectMailedPackage" resultType="PackageList">
+  select  id,CreateTime,UpdateTime,CompanyName,TrackingNumber,StoreName,UserName,ShippingAddress,Email,
+    PhoneNumber,Receiver,Recipient,Mnote,Unote,PackageQuantity,HomeBasePrice,HomePromotQuantity,HomePromotPrice,WareHouseBasePrice,
+    WareHousePromotQuantity,WareHousePromotPrice,CreditCardNumber,Status,CheckStatus,Checker,LabelStatus,Labeler,PayStatus,Payer,
+    ProductId,UserId,CompanyId
+  from  packagelist
+  where  CheckStatus=#{checkStatus}
+
+
+</select>
+
+</mapper>

@@ -1,9 +1,11 @@
 package com.eastebiz.entity;
 
 import java.io.Serializable;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 
 public class PackageList implements Serializable {
     private Integer id;
