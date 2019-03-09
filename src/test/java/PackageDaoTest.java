@@ -12,7 +12,7 @@ import java.util.List;
 @SpringBootTest(classes = Application.class)
 @RunWith(SpringRunner.class)
 public class PackageDaoTest {
-
+    //测试 fork 是否成功
     @Autowired
     private PackageListDao packageListDao;
 
