@@ -1,11 +1,14 @@
 package com.eastebiz.entity;
 
-public class EbizStatus {
+import java.io.Serializable;
+
+public class EbizStatus implements Serializable{
 
     private Integer id;
     private Integer companyId;
     private Integer userId;
     private String  status;
+    private String starLevel;
 
 
     //get     set
@@ -42,23 +45,47 @@ public class EbizStatus {
         this.status = status;
     }
 
+    public String getStarLevel() {
+        return starLevel;
+    }
+
+    public void setStarLevel(String starLevel) {
+        this.starLevel = starLevel;
+    }
+
+
     //构造
 
     public EbizStatus() {
     }
 
     //用于修改状态
-    public EbizStatus(String status) {
-        this.status = status;
-    }
 
-    public EbizStatus(Integer companyId, Integer userId, String status) {
+
+    public EbizStatus(Integer id, Integer companyId, Integer userId, String status) {
+        this.id = id;
         this.companyId = companyId;
         this.userId = userId;
         this.status = status;
     }
 
-   //toString
+    public EbizStatus(Integer companyId, Integer userId, String starLevel) {
+        this.companyId = companyId;
+        this.userId = userId;
+        this.starLevel = starLevel;
+    }
+
+
+
+    public EbizStatus(Integer id, Integer companyId, Integer userId, String status, String starLevel) {
+        this.id = id;
+        this.companyId = companyId;
+        this.userId = userId;
+        this.status = status;
+        this.starLevel = starLevel;
+    }
+
+    //toString
 
     @Override
     public String toString() {

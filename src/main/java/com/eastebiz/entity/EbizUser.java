@@ -4,11 +4,12 @@ package com.eastebiz.entity;
 import com.alibaba.fastjson.annotation.JSONField;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class EbizUser {
+public class EbizUser implements Serializable {
         /*
         *  id` int(11) NOT NULL AUTO_INCREMENT,
   `UserName` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,

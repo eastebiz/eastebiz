@@ -1475,13 +1475,13 @@
     </column>
     <column id="336" parent="219" name="WareHousePromotQuantity">
       <Position>18</Position>
-      <Comment>下货到仓库的促销数量	</Comment>
+      <Comment>下货到仓库的促销数量</Comment>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="337" parent="219" name="WareHousePromotPrice">
       <Position>19</Position>
-      <Comment>下货到仓库的促销价格	</Comment>
+      <Comment>下货到仓库的促销价格</Comment>
       <DataType>double(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>

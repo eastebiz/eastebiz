@@ -2,10 +2,10 @@ package com.eastebiz.service.impl;
 
 import com.eastebiz.dao.PackageListDao;
 import com.eastebiz.entity.PackageList;
-import com.eastebiz.entity.ProductList;
 import com.eastebiz.service.PackageListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -21,7 +21,12 @@ public class PackageListServiceImpl implements PackageListService {
         return packageListDao.selectAllPackageByCompanyId(companyId);
     }
     //查询护士所有包裹
+
+
+
+
     @Override
+    @Transactional(propagation = Propagation.SUPPORTS,readOnly = true)
     public List<PackageList> selectAllPackageById(Integer userId) {
         return  packageListDao.selectAllPackageById(userId);
     }

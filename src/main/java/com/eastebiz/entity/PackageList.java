@@ -37,7 +37,7 @@ public class PackageList implements Serializable {
     private String labeler;
     private String payStatus;
     private String payer;
-    private List<ProductList> productLists = new ArrayList<ProductList>();
+    private List<Product> products = new ArrayList<Product>();
     private Integer userId;
     private Integer companyId;
 
@@ -73,7 +73,7 @@ public class PackageList implements Serializable {
                 ", labeler='" + labeler + '\'' +
                 ", payStatus='" + payStatus + '\'' +
                 ", payer='" + payer + '\'' +
-                ", productLists=" + productLists +
+                ", products=" + products +
                 ", userId=" + userId +
                 ", companyId=" + companyId +
                 '}';
@@ -83,7 +83,7 @@ public class PackageList implements Serializable {
         super();
     }
 
-    public PackageList(Integer id, Date createTime, Date updateTime, String companyName, String trackingNumber, String storeName, String userName, String shippingAddress, String email, String phoneNumber, String receiver, String recipient, String mnote, String unote, Integer packageQuantity, double homeBasePrice, Integer homePromotQuantity, double homePromotPrice, double wareHouseBasePrice, Integer wareHousePromotQuantity, double wareHousePromotPrice, String creditCardNumber, String status, String checkStatus, String checker, String labelStatus, String labeler, String payStatus, String payer, List<ProductList> productLists, Integer userId, Integer companyId) {
+    public PackageList(Integer id, Date createTime, Date updateTime, String companyName, String trackingNumber, String storeName, String userName, String shippingAddress, String email, String phoneNumber, String receiver, String recipient, String mnote, String unote, Integer packageQuantity, double homeBasePrice, Integer homePromotQuantity, double homePromotPrice, double wareHouseBasePrice, Integer wareHousePromotQuantity, double wareHousePromotPrice, String creditCardNumber, String status, String checkStatus, String checker, String labelStatus, String labeler, String payStatus, String payer, List<Product> productLists, Integer userId, Integer companyId) {
         this.id = id;
         this.createTime = createTime;
         this.updateTime = updateTime;
@@ -113,7 +113,7 @@ public class PackageList implements Serializable {
         this.labeler = labeler;
         this.payStatus = payStatus;
         this.payer = payer;
-        this.productLists = productLists;
+        this.products = products;
         this.userId = userId;
         this.companyId = companyId;
     }
@@ -342,12 +342,12 @@ public class PackageList implements Serializable {
         this.payer = payer;
     }
 
-    public List<ProductList> getProductLists() {
-        return productLists;
+    public List<Product> getProductLists() {
+        return products;
     }
 
-    public void setProductLists(List<ProductList> productLists) {
-        this.productLists = productLists;
+    public void setProductLists(List<Product> productLists) {
+        this.products = productLists;
     }
 
     public Integer getUserId() {

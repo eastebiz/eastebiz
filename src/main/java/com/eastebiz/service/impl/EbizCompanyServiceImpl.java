@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 @Service("ebizCompanyService")
 @Transactional
-public class EbizCompanyServiceimpl implements EbizCompanyService {
+public class EbizCompanyServiceImpl implements EbizCompanyService {
 
 
     @Autowired
