@@ -13,12 +13,12 @@ WareHousePromotPrice,Status,Tickets,LimitPerPerson,URI,Mnote,CreatedTime,UpdateT
 */
     private Integer id;
     private String companyName;
-    private String mOdel;
+    private String model;
     private String productName;
     private String condition;
-    private String UPC;
-    private String ASIN;
-    private String SKU;
+    private String upc;
+    private String asin;
+    private String sku;
     private String brand;
     private Double weight;
     private Double length;
@@ -61,12 +61,12 @@ WareHousePromotPrice,Status,Tickets,LimitPerPerson,URI,Mnote,CreatedTime,UpdateT
         this.companyName = companyName;
     }
 
-    public String getmOdel() {
-        return mOdel;
+    public String getModel() {
+        return model;
     }
 
-    public void setmOdel(String mOdel) {
-        this.mOdel = mOdel;
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getProductName() {
@@ -85,28 +85,28 @@ WareHousePromotPrice,Status,Tickets,LimitPerPerson,URI,Mnote,CreatedTime,UpdateT
         this.condition = condition;
     }
 
-    public String getUPC() {
-        return UPC;
+    public String getUpc() {
+        return upc;
     }
 
-    public void setUPC(String UPC) {
-        this.UPC = UPC;
+    public void setUpc(String upc) {
+        this.upc = upc;
     }
 
-    public String getASIN() {
-        return ASIN;
+    public String getAsin() {
+        return asin;
     }
 
-    public void setASIN(String ASIN) {
-        this.ASIN = ASIN;
+    public void setAsin(String asin) {
+        this.asin = asin;
     }
 
-    public String getSKU() {
-        return SKU;
+    public String getSku() {
+        return sku;
     }
 
-    public void setSKU(String SKU) {
-        this.SKU = SKU;
+    public void setSku(String sku) {
+        this.sku = sku;
     }
 
     public String getBrand() {
@@ -229,11 +229,11 @@ WareHousePromotPrice,Status,Tickets,LimitPerPerson,URI,Mnote,CreatedTime,UpdateT
         this.URI = URI;
     }
 
-    public String getTnote() {
+    public String getMnote() {
         return mnote;
     }
 
-    public void setTnote(String tnote) {
+    public void setMnote(String mnote) {
         this.mnote = mnote;
     }
 
@@ -274,12 +274,12 @@ WareHousePromotPrice,Status,Tickets,LimitPerPerson,URI,Mnote,CreatedTime,UpdateT
 
     //修改
 
-    public Product(Integer id, String companyName, String productName, String condition, String SKU, String brand, Double weight, Double length, Double width, Double height, Double homeBasePrice, Integer homePromotQuantity, Double homePromotPrice, Double wareHouseBasePrice, Integer wareHousePromotQuantity, Double wareHousePromotPrice, String status, String tickets, String limitPerPerson, String URI, String mnote,Date updateTime) {
+    public Product(Integer id, String companyName, String productName, String condition, String sku, String brand, Double weight, Double length, Double width, Double height, Double homeBasePrice, Integer homePromotQuantity, Double homePromotPrice, Double wareHouseBasePrice, Integer wareHousePromotQuantity, Double wareHousePromotPrice, String status, String tickets, String limitPerPerson, String URI, String mnote,Date updateTime) {
         this.id = id;
         this.companyName = companyName;
         this.productName = productName;
         this.condition = condition;
-        this.SKU = SKU;
+        this.sku = sku;
         this.brand = brand;
         this.weight = weight;
         this.length = length;
@@ -302,15 +302,15 @@ WareHousePromotPrice,Status,Tickets,LimitPerPerson,URI,Mnote,CreatedTime,UpdateT
 
 
 
-    public Product( String companyName, String mOdel, String productName, String condition, String UPC, String ASIN, String SKU, String brand, Double weight, Double length, Double width, Double height, Double homeBasePrice, Integer homePromotQuantity, Double homePromotPrice, Double wareHouseBasePrice, Integer wareHousePromotQuantity, Double wareHousePromotPrice, String status, String tickets, String limitPerPerson, String URI, String mnote, Date createdTime, EbizCompany ebizCompany) {
+    public Product( String companyName, String model, String productName, String condition, String upc, String asin, String sku, String brand, Double weight, Double length, Double width, Double height, Double homeBasePrice, Integer homePromotQuantity, Double homePromotPrice, Double wareHouseBasePrice, Integer wareHousePromotQuantity, Double wareHousePromotPrice, String status, String tickets, String limitPerPerson, String URI, String mnote, Date createdTime, EbizCompany ebizCompany) {
 
         this.companyName = companyName;
-        this.mOdel = mOdel;
+        this.model = model;
         this.productName = productName;
         this.condition = condition;
-        this.UPC = UPC;
-        this.ASIN = ASIN;
-        this.SKU = SKU;
+        this.upc = upc;
+        this.asin = asin;
+        this.sku = sku;
         this.brand = brand;
         this.weight = weight;
         this.length = length;
@@ -331,15 +331,15 @@ WareHousePromotPrice,Status,Tickets,LimitPerPerson,URI,Mnote,CreatedTime,UpdateT
         this.ebizCompany = ebizCompany;
     }
 
-    public Product(Integer id, String companyName, String mOdel, String productName, String condition, String UPC, String ASIN, String SKU, String brand, Double weight, Double length, Double width, Double height, Double homeBasePrice, Integer homePromotQuantity, Double homePromotPrice, Double wareHouseBasePrice, Integer wareHousePromotQuantity, Double wareHousePromotPrice, String status, String tickets, String limitPerPerson, String URI, String mnote, Date createdTime, EbizCompany ebizCompany) {
+    public Product(Integer id, String companyName, String model, String productName, String condition, String upc, String asin, String sku, String brand, Double weight, Double length, Double width, Double height, Double homeBasePrice, Integer homePromotQuantity, Double homePromotPrice, Double wareHouseBasePrice, Integer wareHousePromotQuantity, Double wareHousePromotPrice, String status, String tickets, String limitPerPerson, String URI, String mnote, Date createdTime, EbizCompany ebizCompany) {
         this.id = id;
         this.companyName = companyName;
-        this.mOdel = mOdel;
+        this.model = model;
         this.productName = productName;
         this.condition = condition;
-        this.UPC = UPC;
-        this.ASIN = ASIN;
-        this.SKU = SKU;
+        this.upc = upc;
+        this.asin = asin;
+        this.sku = sku;
         this.brand = brand;
         this.weight = weight;
         this.length = length;
@@ -359,18 +359,48 @@ WareHousePromotPrice,Status,Tickets,LimitPerPerson,URI,Mnote,CreatedTime,UpdateT
         this.createdTime = createdTime;
         this.ebizCompany = ebizCompany;
     }
+
+
+
+    public Product(String companyName, String model, String productName, String condition, String upc, String asin, String sku, String brand, Double weight, Double length, Double width, Double height, Double homeBasePrice, Integer homePromotQuantity, Double homePromotPrice, Double wareHouseBasePrice, Integer wareHousePromotQuantity, Double wareHousePromotPrice, String status, String tickets, String limitPerPerson, String URI, String mnote, Date createdTime) {
+        this.companyName = companyName;
+        this.model = model;
+        this.productName = productName;
+        this.condition = condition;
+        this.upc = upc;
+        this.asin = asin;
+        this.sku = sku;
+        this.brand = brand;
+        this.weight = weight;
+        this.length = length;
+        this.width = width;
+        this.height = height;
+        this.homeBasePrice = homeBasePrice;
+        this.homePromotQuantity = homePromotQuantity;
+        this.homePromotPrice = homePromotPrice;
+        this.wareHouseBasePrice = wareHouseBasePrice;
+        this.wareHousePromotQuantity = wareHousePromotQuantity;
+        this.wareHousePromotPrice = wareHousePromotPrice;
+        this.status = status;
+        this.tickets = tickets;
+        this.limitPerPerson = limitPerPerson;
+        this.URI = URI;
+        this.mnote = mnote;
+        this.createdTime = createdTime;
+    }
+
 
     @Override
     public String toString() {
-        return "ProductList{" +
+        return "Product{" +
                 "id=" + id +
                 ", companyName='" + companyName + '\'' +
-                ", mOdel='" + mOdel + '\'' +
+                ", model='" + model + '\'' +
                 ", productName='" + productName + '\'' +
                 ", condition='" + condition + '\'' +
-                ", UPC='" + UPC + '\'' +
-                ", ASIN='" + ASIN + '\'' +
-                ", SKU='" + SKU + '\'' +
+                ", upc='" + upc + '\'' +
+                ", asin='" + asin + '\'' +
+                ", sku='" + sku + '\'' +
                 ", brand='" + brand + '\'' +
                 ", weight=" + weight +
                 ", length=" + length +
@@ -389,35 +419,7 @@ WareHousePromotPrice,Status,Tickets,LimitPerPerson,URI,Mnote,CreatedTime,UpdateT
                 ", mnote='" + mnote + '\'' +
                 ", createdTime=" + createdTime +
                 ", updateTime=" + updateTime +
-
+                ", ebizCompany=" + ebizCompany +
                 '}';
     }
-
-    public Product(String companyName, String mOdel, String productName, String condition, String UPC, String ASIN, String SKU, String brand, Double weight, Double length, Double width, Double height, Double homeBasePrice, Integer homePromotQuantity, Double homePromotPrice, Double wareHouseBasePrice, Integer wareHousePromotQuantity, Double wareHousePromotPrice, String status, String tickets, String limitPerPerson, String URI, String mnote, Date createdTime) {
-        this.companyName = companyName;
-        this.mOdel = mOdel;
-        this.productName = productName;
-        this.condition = condition;
-        this.UPC = UPC;
-        this.ASIN = ASIN;
-        this.SKU = SKU;
-        this.brand = brand;
-        this.weight = weight;
-        this.length = length;
-        this.width = width;
-        this.height = height;
-        this.homeBasePrice = homeBasePrice;
-        this.homePromotQuantity = homePromotQuantity;
-        this.homePromotPrice = homePromotPrice;
-        this.wareHouseBasePrice = wareHouseBasePrice;
-        this.wareHousePromotQuantity = wareHousePromotQuantity;
-        this.wareHousePromotPrice = wareHousePromotPrice;
-        this.status = status;
-        this.tickets = tickets;
-        this.limitPerPerson = limitPerPerson;
-        this.URI = URI;
-        this.mnote = mnote;
-        this.createdTime = createdTime;
-    }
-
 }

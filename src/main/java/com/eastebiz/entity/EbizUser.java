@@ -49,10 +49,13 @@ public class EbizUser implements Serializable {
     private String userType;
     private String permissions;
     private String balance;
-    private String personalLimit;
+    private String zipCode;
     private String introducer;
 
     //关系属性
+    private  EbizCompany  ebizCompany = new EbizCompany();
+
+
     private List<PackageList> packageList = new ArrayList<PackageList>();
 
     //get set
@@ -178,13 +181,6 @@ public class EbizUser implements Serializable {
         this.balance = balance;
     }
 
-    public String getPersonalLimit() {
-        return personalLimit;
-    }
-
-    public void setPersonalLimit(String personalLimit) {
-        this.personalLimit = personalLimit;
-    }
 
     public String getIntroducer() {
         return introducer;
@@ -202,7 +198,23 @@ public class EbizUser implements Serializable {
         this.packageList = packageList;
     }
 
-  //构造方法
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public EbizCompany getEbizCompany() {
+        return ebizCompany;
+    }
+
+    public void setEbizCompany(EbizCompany ebizCompany) {
+        this.ebizCompany = ebizCompany;
+    }
+
+    //构造方法
 
 
     public EbizUser() {
@@ -212,17 +224,18 @@ public class EbizUser implements Serializable {
         this.id = id;
     }
 
-    //登录
-    public EbizUser(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
+
+
+    public EbizUser(String address) {
+        this.address = address;
     }
+
 
     //修改信息
 
 
 
-    public EbizUser(Integer id, String password, String email, String phoneNumber, String address, String mnote, String status, String userType, String permissions, String balance, String personalLimit, String introducer) {
+    public EbizUser(Integer id, String password, String email, String phoneNumber, String address, String mnote, String status, String userType, String permissions, String balance, String introducer) {
         this.id = id;
         this.password = password;
         this.email = email;
@@ -233,13 +246,13 @@ public class EbizUser implements Serializable {
         this.userType = userType;
         this.permissions = permissions;
         this.balance = balance;
-        this.personalLimit = personalLimit;
         this.introducer = introducer;
     }
 
+//注册
 
 
-    public EbizUser(String userName, String firstName, String lastName, String password, String email, String phoneNumber, String address, Date createTime, String mnote, String status, String userType, String permissions, String balance, String personalLimit, String introducer) {
+    public EbizUser(String userName, String firstName, String lastName, String password, String email, String phoneNumber, String address, Date createTime, String status, String userType, String zipCode, EbizCompany ebizCompany) {
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -248,38 +261,13 @@ public class EbizUser implements Serializable {
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.createTime = createTime;
-        this.mnote = mnote;
         this.status = status;
         this.userType = userType;
-        this.permissions = permissions;
-        this.balance = balance;
-        this.personalLimit = personalLimit;
-        this.introducer = introducer;
+        this.zipCode = zipCode;
+        this.ebizCompany = ebizCompany;
     }
 
-
-
-
-    public EbizUser(String userName, String firstName, String lastName, String password, String email, String phoneNumber, String address, Date createTime, Date updateTime, String mnote, String status, String userType, String permissions, String balance, String personalLimit, String introducer) {
-        this.userName = userName;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.password = password;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
-        this.createTime = createTime;
-        this.updateTime = updateTime;
-        this.mnote = mnote;
-        this.status = status;
-        this.userType = userType;
-        this.permissions = permissions;
-        this.balance = balance;
-        this.personalLimit = personalLimit;
-        this.introducer = introducer;
-    }
-
-    public EbizUser(String userName, String firstName, String lastName, String password, String email, String phoneNumber, String address, Date createTime, Date updateTime, String mnote, String status, String userType, String permissions, String balance, String personalLimit, String introducer, List<PackageList> packageList) {
+    public EbizUser(String userName, String firstName, String lastName, String password, String email, String phoneNumber, String address, Date createTime, Date updateTime, String mnote, String status, String userType, String permissions, String balance, String introducer) {
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -294,13 +282,30 @@ public class EbizUser implements Serializable {
         this.userType = userType;
         this.permissions = permissions;
         this.balance = balance;
-        this.personalLimit = personalLimit;
+        this.introducer = introducer;
+    }
+
+    public EbizUser(String userName, String firstName, String lastName, String password, String email, String phoneNumber, String address, Date createTime, Date updateTime, String mnote, String status, String userType, String permissions, String balance, String introducer, List<PackageList> packageList) {
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.mnote = mnote;
+        this.status = status;
+        this.userType = userType;
+        this.permissions = permissions;
+        this.balance = balance;
         this.introducer = introducer;
         this.packageList = packageList;
     }
 
 
-    public EbizUser(Integer id, String userName, String firstName, String lastName, String password, String email, String phoneNumber, String address, Date createTime, Date updateTime, String mnote, String status, String userType, String permissions, String balance, String personalLimit, String introducer, List<PackageList> packageList) {
+    public EbizUser(Integer id, String userName, String firstName, String lastName, String password, String email, String phoneNumber, String address, Date createTime, Date updateTime, String mnote, String status, String userType, String permissions, String balance, String introducer, List<PackageList> packageList) {
         this.id = id;
         this.userName = userName;
         this.firstName = firstName;
@@ -316,7 +321,6 @@ public class EbizUser implements Serializable {
         this.userType = userType;
         this.permissions = permissions;
         this.balance = balance;
-        this.personalLimit = personalLimit;
         this.introducer = introducer;
         this.packageList = packageList;
     }
@@ -339,7 +343,6 @@ public class EbizUser implements Serializable {
                 ", userType='" + userType + '\'' +
                 ", permissions='" + permissions + '\'' +
                 ", balance='" + balance + '\'' +
-                ", personalLimit='" + personalLimit + '\'' +
                 ", introducer='" + introducer + '\'' +
                 ", packageList=" + packageList +
                 '}';

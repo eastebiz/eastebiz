@@ -46,8 +46,8 @@ public class ProductServiceImpl implements ProductService {
     //根据状态查询
     @Override
     @Transactional(propagation = Propagation.SUPPORTS,readOnly = true)
-    public List<Product> queryAndStatus(String status) {
-        return productDao.selectAndStatus(status);
+    public List<Product> queryAndStatus(String status,Integer ebizcompanyId) {
+        return productDao.selectAndStatus(status,ebizcompanyId);
     }
 
     //根据公司ID查询公司旗下有多少产品
@@ -55,5 +55,20 @@ public class ProductServiceImpl implements ProductService {
     @Transactional(propagation = Propagation.SUPPORTS,readOnly = true)
     public List<Product> seclectAllEbizcompanyId(Integer ebizcompanyId) {
         return productDao.seclectAllEbizcompanyId(ebizcompanyId);
+    }
+
+    //根据公司ID查询公司在收购的产品
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS,readOnly = true)
+    public List<Product> queryAllEbizcompany(Integer ebizcompanyId) {
+        return productDao.seclectAllEbizcompany(ebizcompanyId);
+    }
+
+
+    //根据ID查询一个
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS,readOnly = true)
+    public Product selectOneProduct(Integer id) {
+        return productDao.selectOneProduct(id);
     }
 }

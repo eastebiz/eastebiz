@@ -48,6 +48,16 @@ public class EbizCompany implements Serializable {
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
 
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private Date payPeriod;
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private Date payTime;
+    private String companyCode;
+
+
+
     //关系属性
     private List<PackageList> packageLists = new ArrayList<PackageList>();
     private List<Product> products = new ArrayList<Product>();
@@ -247,6 +257,37 @@ public class EbizCompany implements Serializable {
         this.products = products;
     }
 
+    public Date getPayPeriod() {
+        return payPeriod;
+    }
+
+    public void setPayPeriod(Date payPeriod) {
+        this.payPeriod = payPeriod;
+    }
+
+    public Date getPayTime() {
+        return payTime;
+    }
+
+    public void setPayTime(Date payTime) {
+        this.payTime = payTime;
+    }
+
+
+
+    public String getCompanyCode() {
+        return companyCode;
+    }
+
+    public void setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+
     //构造
 
     public EbizCompany() {
@@ -256,60 +297,16 @@ public class EbizCompany implements Serializable {
         this.id = id;
     }
 
-    //登陆
-    public EbizCompany(String companyName, String password) {
-        this.companyName = companyName;
-        this.password = password;
-    }
-
-
-    //修改信息
-
-    public EbizCompany(Integer id, String password, String email, String status, String permision, String balance, String mote, String uNote, String address, String address1Name, String address1Value, String address2Name, String address2Value, String address3Name, String address3Value, String phoneNumber, String userManual) {
-        this.id = id;
-        this.password = password;
-        this.email = email;
-        this.status = status;
-        this.permision = permision;
-        this.balance = balance;
-        this.mote = mote;
-        this.uNote = uNote;
-        this.address = address;
-        this.address1Name = address1Name;
-        this.address1Value = address1Value;
-        this.address2Name = address2Name;
-        this.address2Value = address2Value;
-        this.address3Name = address3Name;
-        this.address3Value = address3Value;
-        this.phoneNumber = phoneNumber;
-        this.userManual = userManual;
-    }
-
-
-    public EbizCompany( String companyName, String owerName, String password, String email, String status, String permision, String balance, String mote, String uNote, String payTimeInfor, String address, String address1Name, String address1Value, String address2Name, String address2Value, String address3Name, String address3Value, String phoneNumber, String userManual, Date createTime) {
+    public EbizCompany(String companyName, String owerName, Date createTime) {
         this.companyName = companyName;
         this.owerName = owerName;
-        this.password = password;
-        this.email = email;
-        this.status = status;
-        this.permision = permision;
-        this.balance = balance;
-        this.mote = mote;
-        this.uNote = uNote;
-        this.payTimeInfor = payTimeInfor;
-        this.address = address;
-        this.address1Name = address1Name;
-        this.address1Value = address1Value;
-        this.address2Name = address2Name;
-        this.address2Value = address2Value;
-        this.address3Name = address3Name;
-        this.address3Value = address3Value;
-        this.phoneNumber = phoneNumber;
-        this.userManual = userManual;
         this.createTime = createTime;
     }
 
-    public EbizCompany(Integer id, String companyName, String owerName, String password, String email, String status, String permision, String balance, String mote, String uNote, String payTimeInfor, String address, String address1Name, String address1Value, String address2Name, String address2Value, String address3Name, String address3Value, String phoneNumber, String userManual, Date createTime, Date updateTime, List<PackageList> packageLists, List<Product> products) {
+    //修改信息
+
+
+    public EbizCompany(Integer id, String companyName, String owerName, String password, String email, String status, String permision, String balance, String mote, String uNote, String payTimeInfor, String address, String address1Name, String address1Value, String address2Name, String address2Value, String address3Name, String address3Value, String phoneNumber, String userManual, Date createTime, Date updateTime, Date payPeriod, Date payTime, String companyCode) {
         this.id = id;
         this.companyName = companyName;
         this.owerName = owerName;
@@ -332,6 +329,92 @@ public class EbizCompany implements Serializable {
         this.userManual = userManual;
         this.createTime = createTime;
         this.updateTime = updateTime;
+        this.payPeriod = payPeriod;
+        this.payTime = payTime;
+
+        this.companyCode = companyCode;
+    }
+
+    public EbizCompany(Integer id, String password, String email, String permision, String address, String phoneNumber) {
+        this.id = id;
+        this.password = password;
+        this.email = email;
+        this.permision = permision;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+    }
+
+
+    public EbizCompany(Integer id, String email, String address1Name, String address1Value, String address2Name, String address2Value, String address3Name, String address3Value, String phoneNumber) {
+        this.id = id;
+        this.email = email;
+        this.address1Name = address1Name;
+        this.address1Value = address1Value;
+        this.address2Name = address2Name;
+        this.address2Value = address2Value;
+        this.address3Name = address3Name;
+        this.address3Value = address3Value;
+        this.phoneNumber = phoneNumber;
+    }
+
+
+    //注册
+
+
+
+    public EbizCompany(String companyName, String owerName, String password, String email, String status, String permision, String balance, String mote, String uNote, String payTimeInfor, String address, String address1Name, String address1Value, String address2Name, String address2Value, String address3Name, String address3Value, String phoneNumber, String userManual, Date createTime, Date updateTime, Date payPeriod, Date payTime, String companyCode) {
+        this.companyName = companyName;
+        this.owerName = owerName;
+        this.password = password;
+        this.email = email;
+        this.status = status;
+        this.permision = permision;
+        this.balance = balance;
+        this.mote = mote;
+        this.uNote = uNote;
+        this.payTimeInfor = payTimeInfor;
+        this.address = address;
+        this.address1Name = address1Name;
+        this.address1Value = address1Value;
+        this.address2Name = address2Name;
+        this.address2Value = address2Value;
+        this.address3Name = address3Name;
+        this.address3Value = address3Value;
+        this.phoneNumber = phoneNumber;
+        this.userManual = userManual;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.payPeriod = payPeriod;
+        this.payTime = payTime;
+        this.companyCode = companyCode;
+    }
+
+    public EbizCompany(Integer id, String companyName, String owerName, String password, String email, String status, String permision, String balance, String mote, String uNote, String payTimeInfor, String address, String address1Name, String address1Value, String address2Name, String address2Value, String address3Name, String address3Value, String phoneNumber, String userManual, Date createTime, Date updateTime, Date payPeriod, Date payTime, String companyCode, List<PackageList> packageLists, List<Product> products) {
+        this.id = id;
+        this.companyName = companyName;
+        this.owerName = owerName;
+        this.password = password;
+        this.email = email;
+        this.status = status;
+        this.permision = permision;
+        this.balance = balance;
+        this.mote = mote;
+        this.uNote = uNote;
+        this.payTimeInfor = payTimeInfor;
+        this.address = address;
+        this.address1Name = address1Name;
+        this.address1Value = address1Value;
+        this.address2Name = address2Name;
+        this.address2Value = address2Value;
+        this.address3Name = address3Name;
+        this.address3Value = address3Value;
+        this.phoneNumber = phoneNumber;
+        this.userManual = userManual;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.payPeriod = payPeriod;
+        this.payTime = payTime;
+        this.companyCode = companyCode;
         this.packageLists = packageLists;
         this.products = products;
     }
@@ -361,6 +444,9 @@ public class EbizCompany implements Serializable {
                 ", userManual='" + userManual + '\'' +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", payPeriod=" + payPeriod +
+                ", payTime=" + payTime +
+                ", companyCode='" + companyCode + '\'' +
                 ", packageLists=" + packageLists +
                 ", products=" + products +
                 '}';

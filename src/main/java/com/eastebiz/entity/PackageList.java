@@ -1,5 +1,8 @@
 package com.eastebiz.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 
 import java.util.ArrayList;
@@ -9,7 +12,11 @@ import java.util.List;
 
 public class PackageList implements Serializable {
     private Integer id;
+    @JSONField(format="yyyy-MM-dd")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createTime;
+    @JSONField(format="yyyy-MM-dd")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updateTime;
     private String companyName;
     private String trackingNumber;
@@ -37,9 +44,15 @@ public class PackageList implements Serializable {
     private String labeler;
     private String payStatus;
     private String payer;
-    private List<Product> products = new ArrayList<Product>();
     private Integer userId;
     private Integer companyId;
+    private Integer productId;
+    private  double submitPrice;
+    private  String  addressStatus;
+    private String model;
+    private  String productName;
+    private  String  brand;
+
 
     @Override
     public String toString() {
@@ -73,9 +86,14 @@ public class PackageList implements Serializable {
                 ", labeler='" + labeler + '\'' +
                 ", payStatus='" + payStatus + '\'' +
                 ", payer='" + payer + '\'' +
-                ", products=" + products +
                 ", userId=" + userId +
                 ", companyId=" + companyId +
+                ", productId=" + productId +
+                ", submitPrice=" + submitPrice +
+                ", addressStatus='" + addressStatus + '\'' +
+                ", model='" + model + '\'' +
+                ", productName='" + productName + '\'' +
+                ", brand='" + brand + '\'' +
                 '}';
     }
 
@@ -83,7 +101,7 @@ public class PackageList implements Serializable {
         super();
     }
 
-    public PackageList(Integer id, Date createTime, Date updateTime, String companyName, String trackingNumber, String storeName, String userName, String shippingAddress, String email, String phoneNumber, String receiver, String recipient, String mnote, String unote, Integer packageQuantity, double homeBasePrice, Integer homePromotQuantity, double homePromotPrice, double wareHouseBasePrice, Integer wareHousePromotQuantity, double wareHousePromotPrice, String creditCardNumber, String status, String checkStatus, String checker, String labelStatus, String labeler, String payStatus, String payer, List<Product> productLists, Integer userId, Integer companyId) {
+    public PackageList(Integer id, Date createTime, Date updateTime, String companyName, String trackingNumber, String storeName, String userName, String shippingAddress, String email, String phoneNumber, String receiver, String recipient, String mnote, String unote, Integer packageQuantity, double homeBasePrice, Integer homePromotQuantity, double homePromotPrice, double wareHouseBasePrice, Integer wareHousePromotQuantity, double wareHousePromotPrice, String creditCardNumber, String status, String checkStatus, String checker, String labelStatus, String labeler, String payStatus, String payer, Integer userId, Integer companyId, Integer productId, double submitPrice, String addressStatus, String model, String productName, String brand) {
         this.id = id;
         this.createTime = createTime;
         this.updateTime = updateTime;
@@ -113,9 +131,14 @@ public class PackageList implements Serializable {
         this.labeler = labeler;
         this.payStatus = payStatus;
         this.payer = payer;
-        this.products = products;
         this.userId = userId;
         this.companyId = companyId;
+        this.productId = productId;
+        this.submitPrice = submitPrice;
+        this.addressStatus = addressStatus;
+        this.model = model;
+        this.productName = productName;
+        this.brand = brand;
     }
 
     public Integer getId() {
@@ -278,6 +301,14 @@ public class PackageList implements Serializable {
         this.wareHousePromotQuantity = wareHousePromotQuantity;
     }
 
+    public Integer getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Integer productId) {
+        this.productId = productId;
+    }
+
     public double getWareHousePromotPrice() {
         return wareHousePromotPrice;
     }
@@ -342,13 +373,7 @@ public class PackageList implements Serializable {
         this.payer = payer;
     }
 
-    public List<Product> getProductLists() {
-        return products;
-    }
 
-    public void setProductLists(List<Product> productLists) {
-        this.products = productLists;
-    }
 
     public Integer getUserId() {
         return userId;
@@ -366,5 +391,56 @@ public class PackageList implements Serializable {
         this.companyId = companyId;
     }
 
+    public String getChecker() {
+        return checker;
+    }
+
+    public void setChecker(String checker) {
+        this.checker = checker;
+    }
+
+
+
+    public double getSubmitPrice() {
+        return submitPrice;
+    }
+
+    public void setSubmitPrice(double submitPrice) {
+        this.submitPrice = submitPrice;
+    }
+
+    public String getAddressStatus() {
+        return addressStatus;
+    }
+
+    public void setAddressStatus(String addressStatus) {
+        this.addressStatus = addressStatus;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
 
 }
+

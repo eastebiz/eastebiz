@@ -1,7 +1,5 @@
 import com.eastebiz.Application;
 
-import com.eastebiz.dao.EbizUserDao;
-import com.eastebiz.entity.EbizUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

@@ -1,7 +1,5 @@
 import com.eastebiz.Application;
 
-import com.eastebiz.dao.EbizCompanyDao;
-import com.eastebiz.entity.EbizCompany;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

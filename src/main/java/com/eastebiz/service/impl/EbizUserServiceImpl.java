@@ -27,15 +27,14 @@ public class EbizUserServiceImpl implements EbizUserSevice {
     //登录
     @Override
     @Transactional(propagation = Propagation.SUPPORTS,readOnly = true)
-    public EbizUser loginEbizUser(EbizUser ebizUser) {
-        return ebizUserDao.selectOneEbizUser(ebizUser);
+    public EbizUser loginEbizUser(String userName,String password) {
+        return ebizUserDao.selectOneEbizUser(userName, password);
     }
 
     //查询名字存不存在
     @Override
     @Transactional(propagation = Propagation.SUPPORTS,readOnly = true)
     public EbizUser queryOneUerName(String uerName) {
-
         return ebizUserDao.selectOneUserName(uerName);
     }
 
@@ -51,6 +50,14 @@ public class EbizUserServiceImpl implements EbizUserSevice {
     @Override
     public void updateEbizUser(EbizUser ebizUser) {
         ebizUserDao.updateEbizUser(ebizUser);
+    }
+
+
+    //查询地址
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS,readOnly = true)
+    public EbizUser selectAddress(Integer id) {
+        return ebizUserDao.selectAddress(id);
     }
 
 }
