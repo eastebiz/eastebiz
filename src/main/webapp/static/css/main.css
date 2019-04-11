@@ -1,0 +1,84 @@
+
+/*
+  大字的颜色
+*/
+.eastebiz{
+    font-size: 70px;
+    color: #54b4ff;
+}
+
+/*
+  导航栏  高度和居中
+*/
+#section>.nav>.container>.row{
+    height: 40px;
+    line-height: 40px;
+}
+
+#section>.nav>.container>.row> div + div{
+    border-left: 1px solid #ffffff;
+}
+
+.span{
+    font-size: 20px;
+    color: #000000;
+    margin: auto;
+}
+
+/*
+  导航栏背景颜色
+*/
+#section>.nav>.container{
+    background-color: #57eeff;
+}
+
+.mobile-link:hover{
+    text-decoration: none;
+}
+
+/*
+ 空间
+*/
+
+#section-space1{
+    height: 60px;
+}
+
+#section-space2{
+    height: 40px;
+}
+
+
+
+/*
+  Welcome To EastEbiz  左右居中
+*/
+#section-font .Welcome{
+    font-size: 30px;
+    margin: auto;
+}
+
+/*
+ 每个按钮之间的距离
+*/
+.section{
+    height: 10px;
+}
+
+/*
+  注册/登录  字体与上下距离
+*/
+.section-space{
+    height: 20px;
+}
+
+/*
+  没有注册请注册
+*/
+#span-pleaseRegister{
+    font-size: 12px;
+}
+
+
+
+
