@@ -9,8 +9,9 @@ spring:
   #视图解析器
   mvc:
     view:
-      prefix: /
+      prefix: WEB-INF/
       suffix: .jsp
+
   http:
     #字符集
     encoding:

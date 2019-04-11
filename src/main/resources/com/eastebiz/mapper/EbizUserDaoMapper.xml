@@ -4,22 +4,22 @@
    <!-- 注册 -->
     <insert id="insertEbizUser" parameterType="ebizUser">
         insert into ebizuser (userName,firstName,lastName,password,email,phoneNumber,
-        address,createTime,mnote,status,userType,permissions,balance,personalLimit,introducer)
+        address,createTime,status,userType,zipCode,companyId)
         values (#{userName},#{firstName},#{lastName},#{password},#{email},#{phoneNumber},
-        #{address},#{createTime},#{mnote},#{status},#{userType},#{permissions},#{balance},#{personalLimit},#{introducer})
+        #{address},#{createTime},#{status},#{userType},#{zipCode},#{ebizCompany.id})
     </insert>
 
    <!-- 登录 -->
-    <select id="selectOneEbizUser" parameterType="ebizUser" resultType="ebizUser">
+    <select id="selectOneEbizUser"  resultType="ebizUser">
       select id,userName,firstName,lastName,password,email,phoneNumber,
-        address,createTime,updateTime,mnote,status,userType,permissions,balance,personalLimit,introducer  from
+        address,createTime,updateTime,mnote,status,userType,permissions,balance,introducer,zipCode  from
         ebizuser where userName=#{userName} and password =#{password}
     </select>
 
     <!-- 查询用户是否是存在 -->
     <select id="selectOneUserName" parameterType="String" resultType="ebizUser">
          select id,userName,firstName,lastName,password,email,phoneNumber,
-        address,createTime,updateTime,mnote,status,userType,permissions,balance,personalLimit,introducer  from
+        address,createTime,updateTime,mnote,status,userType,permissions,balance,introducer,zipCode  from
         ebizuser where userName=#{userName}
     </select>
 
@@ -59,8 +59,8 @@
             <if test="balance!=null">
                 Balance=#{balance},
             </if>
-            <if test="personalLimit!=null">
-                PersonalLimit=#{personalLimit},
+            <if test="zipCode!=null">
+                zipCode=#{zipCode},
             </if>
             <if test="introducer!=null">
                 Introducer=#{introducer}
@@ -70,6 +70,11 @@
             </where>
         </trim>
     </update>
+
+    <!-- 查询地址 -->
+    <select id="selectAddress"  parameterType="Integer" resultType="ebizUser">
+        select  address  from ebizuser where id=#{id}
+    </select>
 
 </mapper>
 
